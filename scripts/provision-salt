@@ -1,0 +1,15 @@
+# apt-get install tree ruby bash-completion
+# wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh
+# salt-call -l debug state.sls --local saltstack-template-formula.sls test=True
+# salt-call -l debug state.sls --local template.yaml_jinja test=False
+
+file_roots:
+  base:
+    - /srv/salt/states
+
+pillar_roots:
+  base:
+    - /srv/salt/pillar
+
+module_dirs:
+  - /srv/salt/_modules
