@@ -1,0 +1,5 @@
+#!/bin/bash
+
+unset BUNDLE_BIN_PATH BUNDLE_APP_CONFIG BUNDLE_CONFIG RUBYLIB BUNDLE_GEMFILE GEMRC GEM_PATH RUBYOPT
+
+echo $@ | terminal-notifier -title Vagrant -subtitle boxname -sound Glass
