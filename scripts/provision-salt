@@ -13,3 +13,30 @@ pillar_roots:
 
 module_dirs:
   - /srv/salt/_modules
+
+file_client: local
+
+
+/vagrant/
+└── salt
+    ├── formulas
+    │   └── saltstack-template-formula
+    │       ├── contrib
+    │       │   ├── LICENSE
+    │       │   └── states
+    │       │       └── files
+    │       │           └── template.conf
+    │       ├── _grains
+    │       ├── _modules
+    │       ├── pillar
+    │       │   ├── init.sls
+    │       │   └── minimal.sls
+    │       └── states
+    │           ├── defaults.yaml
+    │           ├── py.sls
+    │           └── yaml_jinja.sls
+    └── _modules
+        ├── datetimeutil.py
+        ├── datetimeutil.pyc
+        ├── formhelper.py
+        └── formhelper.pyc
