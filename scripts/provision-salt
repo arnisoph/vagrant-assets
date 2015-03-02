@@ -1,5 +1,6 @@
 # apt-get install tree ruby bash-completion
-# wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh
+# wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh ; chmod +x bootstrap-salt.sh
+# ./bootstrap-salt.sh -M -K -c /var/tmp/salt-bootstrap/ -g https://github.com/bechtoldt/salt.git git 2014.7-arbe
 # salt-call -l debug state.sls --local saltstack-template-formula.sls test=True
 # salt-call -l debug state.sls --local template.yaml_jinja test=False
 
