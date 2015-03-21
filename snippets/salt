@@ -1,4 +1,3 @@
-# salt-call -l debug state.sls --local saltstack-template-formula.sls test=True
 # salt-call -l debug state.sls --local skeleton.yaml_jinja test=False
 # salt-call -l debug formhelper.get_defaults skeleton
 
