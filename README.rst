@@ -39,7 +39,9 @@ Vagrant providers:
 
 Vagrant provisioners:
 
-* Custom: salt_arbe_git
+* Custom: saltstack_install_arbe_git
+* Custom: rex_install_dist
+* Custom: rex_install_git
 
 
 Files & Directories
@@ -60,4 +62,3 @@ TODO
 ----
 
 * add puppet support
-* add rex support
