@@ -23,12 +23,14 @@ Supported Platforms
 
 Host Operating Systems:
 
-* OS X 10.9.5
+* OS X 10.9
+* OS X 10.10
 
 Guest Operating systems:
 
 * GNU/ Linux Debian 7
 * GNU/ Linux Debian 8
+* CentOS 6
 * CentOS 7
 
 Vagrant providers:
@@ -58,3 +60,4 @@ TODO
 ----
 
 * add puppet support
+* add rex support
