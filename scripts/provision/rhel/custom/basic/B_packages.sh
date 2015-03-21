@@ -21,7 +21,6 @@ yum -y install \
   unzip \
   wget \
   which \
-  ruby \
   tree \
   vim \
   bash-completion
