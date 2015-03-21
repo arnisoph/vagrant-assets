@@ -39,7 +39,7 @@ Vagrant providers:
 
 Vagrant provisioners:
 
-* Custom: saltstack_install_arbe_git
+* Custom: saltstack_install_git_arbe
 * Custom: rex_install_dist
 * Custom: rex_install_git
 
