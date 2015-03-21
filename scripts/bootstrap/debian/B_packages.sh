@@ -5,9 +5,8 @@ echo "Starting ${0}.."
 set -x
 
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-
-DEBIAN_FRONTEND=noninteractive apt-get -y install linux-headers-$(uname -r)
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y install apt-transport-https linux-headers-$(uname -r)
 
 # update package index on boot
 cat <<EOF > /etc/init/refresh-apt.conf
