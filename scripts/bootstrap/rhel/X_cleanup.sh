@@ -25,3 +25,5 @@ if [[ "${DEBUG_PROVISION}" == 'yes' ]]; then
   echo "Taking a nap for \`${SLEEP_SECONDS}' seconds.."
   sleep $SLEEP_SECONDS
 fi
+
+echo "Finishing ${0}.."

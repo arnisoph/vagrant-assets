@@ -52,3 +52,5 @@ pillar_roots:
     - /srv/salt/pillar
 EOF
 fi
+
+echo "Finishing ${0}.."

@@ -25,3 +25,5 @@ yum -y install \
   unzip \
   wget \
   which
+
+echo "Finishing ${0}.."

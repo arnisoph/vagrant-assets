@@ -32,3 +32,4 @@ if [[ "${DEBUG_PROVISION}" == 'yes' ]]; then
   sleep $SLEEP_SECONDS
 fi
 
+echo "Finishing ${0}.."

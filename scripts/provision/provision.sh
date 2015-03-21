@@ -16,3 +16,5 @@ else
     ${f}
   done
 fi
+
+echo "Finishing ${0}.."

@@ -95,3 +95,5 @@ parallels-iso|parallels-pvm)
 ;;
 
 esac
+
+echo "Finishing ${0}.."

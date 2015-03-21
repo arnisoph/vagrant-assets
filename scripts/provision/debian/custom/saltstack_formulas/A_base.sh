@@ -48,3 +48,5 @@ if [[ -d /vagrant/salt/_modules/ ]]; then
   dst=/srv/salt/_modules/common
   if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
 fi
+
+echo "Finishing ${0}.."

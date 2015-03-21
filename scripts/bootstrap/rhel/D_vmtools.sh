@@ -56,3 +56,5 @@ if [[ $PACKER_BUILDER_TYPE =~ vmware ]]; then
   # install vmware tools
   yum install -y vmware-tools-esx-nox
 fi
+
+echo "Finishing ${0}.."

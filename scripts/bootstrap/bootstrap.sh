@@ -10,3 +10,5 @@ done
 
 echo "Cleaning /tmp"
 rm -rf /tmp/*
+
+echo "Finishing ${0}.."

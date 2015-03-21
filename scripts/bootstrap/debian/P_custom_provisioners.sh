@@ -16,3 +16,5 @@ for p in ${provisioners[@]}; do
     done
   fi
 done
+
+echo "Finishing ${0}.."

@@ -25,3 +25,5 @@ yum -y install \
   tree \
   vim \
   bash-completion
+
+echo "Finishing ${0}.."

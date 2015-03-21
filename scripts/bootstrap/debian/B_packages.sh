@@ -16,3 +16,5 @@ start on networking
 task
 exec /usr/bin/apt-get update
 EOF
+
+echo "Finishing ${0}.."
