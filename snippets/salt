@@ -1,0 +1,14 @@
+# salt-call -l debug state.sls --local saltstack-template-formula.sls test=True
+# salt-call -l debug state.sls --local skeleton.yaml_jinja test=False
+# salt-call -l debug formhelper.get_defaults skeleton
+
+base:
+  '*':
+    - salt.masterless
+
+salt-call state.sls salt.minion,repos
+
+mkdir -p /srv/salt/{_grains,_modules,_states,contrib/states,pillar,states}
+
+
+rsync -va --exclude=.git/ --exclude=test/vagrant/ --exclude=.gitmodules ~/Documents/dev/github/saltstack-skeleton-formula/ ~/Documents/dev/github/saltstack-quobyte-formula/

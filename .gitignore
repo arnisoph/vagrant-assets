@@ -38,10 +38,19 @@ Thumbs.db
 *.pyc
 *.slsc
 
-# IDEs and editors#
-###################
+# IDEs and editors #
+####################
 .project
 *.sw*
+.netrwhist
 .idea
 *.iml
 *~
+*.tmp
+
+# Development VMs and containers #
+##################################
+.vagrant/
+test/.env
+test/.vagrant/
+test/nodes.yaml
