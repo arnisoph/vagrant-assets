@@ -9,7 +9,7 @@ provisioners=( ${CUSTOM_PROVISIONERS} )
 unset IFS
 
 for p in ${provisioners[@]}; do
-  dir=/tmp/packer-provision/provision/custom_provisioners/${p}
+  dir=/tmp/packer-provision/provision/custom/${p}
   if [[ -d $dir ]]; then
     for f in ${dir}/*.sh; do
       ${f}
