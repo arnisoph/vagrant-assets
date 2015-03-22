@@ -16,6 +16,7 @@ master_config_path=/vagrant/share/salt-config/${HOSTNAME}/config/master
 # SALT-MINION
 if [[ -f $minion_config_path ]]; then
   cp $minion_config_path /etc/salt/
+  #ln -s $minion_config_path /etc/salt/minion
 else
   cat << EOF > /etc/salt/minion
 file_roots:
@@ -35,10 +36,13 @@ file_client: local
 EOF
 fi
 
+echo "$(hostname -f)" > /etc/salt/minion_id
+
 
 # SALT-MASTER
 if [[ -f $master_config_path ]]; then
   cp $master_config_path /etc/salt/
+  #ln -s $master_config_path /etc/salt/master
 else
   #TODO
   cat << EOF > /etc/salt/master
@@ -52,5 +56,7 @@ pillar_roots:
     - /srv/salt/pillar
 EOF
 fi
+
+echo "*.$(hostname -d)" > /etc/salt/autosign.conf
 
 echo "Finishing ${0}.."
