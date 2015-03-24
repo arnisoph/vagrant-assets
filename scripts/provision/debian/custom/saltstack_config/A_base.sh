@@ -46,6 +46,8 @@ if [[ -f $master_config_path ]]; then
 else
   #TODO
   cat << EOF > /etc/salt/master
+autosign_file: /etc/salt/autosign.conf
+
 file_roots:
   base:
     - /srv/salt/states
