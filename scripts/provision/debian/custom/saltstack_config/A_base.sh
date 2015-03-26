@@ -32,6 +32,9 @@ module_dirs:
   - /srv/salt/_modules/common
   - /srv/salt/_modules/formulas
 
+states_dirs:
+  - /srv/salt/_states/common
+
 file_client: local
 EOF
 fi

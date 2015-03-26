@@ -6,6 +6,12 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
+link_it() {
+  src=$1
+  dst=$2
+  if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
+}
+
 states_top_path=/vagrant/share/salt-config/${HOSTNAME}/file_roots/states/top.sls
 pillar_root=/vagrant/share/salt-config/${HOSTNAME}/file_roots/pillar/
 
@@ -17,23 +23,14 @@ mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,pillar/exam
 if [[ -d /vagrant/salt/formulas/ ]]; then
   for d in /vagrant/salt/formulas/*; do
     if [[ -d ${d}/states ]]; then
-      src=${d}/states
-      dst=/srv/salt/states/${d##*/}
+      link_it ${d}/states /srv/salt/states/${d##*/}
     else
-      src=${d}/${d##*/}
-      dst=/srv/salt/states/${d##*/}
+      link_it ${d}/${d##*/} /srv/salt/states/${d##*/}
     fi
-    if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
 
-    if [[ -d ${d}/contrib/states ]]; then
-      src=${d}/contrib/states
-      dst=/srv/salt/contrib/states/${d##*/}
-    fi
-    if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
+    [[ -d ${d}/contrib/states ]] && link_it ${d}/contrib/states /srv/salt/contrib/states/${d##*/}
 
-    src=${d}/pillar_examples
-    dst=/srv/salt/pillar/examples/${d##*/}
-    if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
+    link_it ${d}/pillar_examples /srv/salt/pillar/examples/${d##*/}
 
     src=${d}/_modules
     dst=/srv/salt/_modules/formulas/${f##*/}
@@ -43,10 +40,7 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
   done
 fi
 
-if [[ -d /vagrant/salt/_modules/ ]]; then
-  src=/vagrant/salt/_modules/
-  dst=/srv/salt/_modules/common
-  if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
-fi
+[[ -d /vagrant/salt/_modules/ ]] && link_it /vagrant/salt/_modules/ /srv/salt/_modules/common
+[[ -d /vagrant/salt/_states/ ]] && link_it /vagrant/salt/_states/ /srv/salt/_states/common
 
 echo "Finishing ${0}.."
