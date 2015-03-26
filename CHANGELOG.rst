@@ -1,5 +1,6 @@
 [Unreleased] ([unreleased])
 ---------------------------
+* rename saltstack_install_git_arbe to saltstack_install_bootstrap (to make it more generic)
 * rename saltstack_install_arbe_git to saltstack_install_git_arbe
 
 v0.1 (2015-03-21)

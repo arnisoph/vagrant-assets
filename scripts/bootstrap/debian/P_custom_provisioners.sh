@@ -4,7 +4,15 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
-IFS=,
+IFS=';'
+provisioners_context=( ${CUSTOM_PROVISIONERS_CONTEXT} )
+unset IFS
+
+for p in ${provisioners_context[@]}; do
+  echo "export ${p}" >> /tmp/provisioners_context.sh
+done
+
+IFS=','
 provisioners=( ${CUSTOM_PROVISIONERS} )
 unset IFS
 
