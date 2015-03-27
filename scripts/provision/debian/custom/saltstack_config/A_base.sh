@@ -23,6 +23,7 @@ file_roots:
   base:
     - /srv/salt/states
     - /srv/salt/contrib/states
+    - /vagrant/share/misc
 
 pillar_roots:
   base:
@@ -55,10 +56,11 @@ file_roots:
   base:
     - /srv/salt/states
     - /srv/salt/contrib/states
+    - /vagrant/share/misc
 
 pillar_roots:
   base:
-    - /srv/salt/pillar
+    - /srv/salt/pillar/share
 EOF
 fi
 
