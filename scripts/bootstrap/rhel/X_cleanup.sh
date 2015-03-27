@@ -19,6 +19,8 @@ yum -y clean all
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
 
+# Remove history file
+unset HISTFILE
 rm -f /root/.bash_history /home/vagrant/.bash_history
 
 if [[ "${DEBUG_PROVISION}" == 'yes' ]]; then
