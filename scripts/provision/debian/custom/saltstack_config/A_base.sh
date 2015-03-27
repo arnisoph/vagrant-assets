@@ -26,7 +26,7 @@ file_roots:
 
 pillar_roots:
   base:
-    - /srv/salt/pillar
+    - /srv/salt/pillar/share
 
 module_dirs:
   - /srv/salt/_modules/common
