@@ -16,13 +16,13 @@ if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
 
   # optional: add Centos 6 dkms support
   if [[ $(grep ' 6.' /etc/redhat-release) ]]; then
-    sudo rpm -ivh http://ftp.hosteurope.de/mirror/fedora-epel/6/x86_64/dkms-2.2.0.3-28.git.7c3e7c5.el6.noarch.rpm
+    sudo rpm -ivh http://ftp.hosteurope.de/mirror/fedora-epel/6/x86_64/dkms-2.2.0.3-30.git.7c3e7c5.el6.noarch.rpm || exit 1
 
   fi
 
   # optional: add Centos 7 dkms support
   if [[ $(grep ' 7.' /etc/redhat-release) ]]; then
-    sudo rpm -ivh http://ftp.hosteurope.de/mirror/fedora-epel/7/x86_64/d/dkms-2.2.0.3-28.git.7c3e7c5.el7.noarch.rpm
+    sudo rpm -ivh http://ftp.hosteurope.de/mirror/fedora-epel/7/x86_64/d/dkms-2.2.0.3-30.git.7c3e7c5.el7.noarch.rpm || exit 1
   fi
 
   # install VirtualBox guest additions
