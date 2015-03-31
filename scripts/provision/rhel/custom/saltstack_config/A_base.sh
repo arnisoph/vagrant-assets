@@ -27,6 +27,7 @@ file_roots:
 
 pillar_roots:
   base:
+    - /srv/salt/pillar/examples
     - /srv/salt/pillar/share
 
 module_dirs:
@@ -60,6 +61,7 @@ file_roots:
 
 pillar_roots:
   base:
+    - /srv/salt/pillar/examples
     - /srv/salt/pillar/share
 EOF
 fi
