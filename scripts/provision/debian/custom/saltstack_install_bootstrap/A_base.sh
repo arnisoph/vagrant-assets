@@ -4,12 +4,18 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
-cat /tmp/provisioners_context.sh
-source /tmp/provisioners_context.sh
+context_file=/tmp/provisioners_context.sh
 
-IFS=','
-bootstrap_params=( $saltstack_install_bootstrap_params )
-unset IFS
+if [[ -r $context_file ]]; then
+  cat $context_file
+  source $context_file
+
+  IFS=','
+  bootstrap_params=( $saltstack_install_bootstrap_params )
+  unset IFS
+else
+  bootstrap_params=( '-M' '-K' 'stable' )
+fi
 
 if [[ -z "$(which salt-call)" ]]; then
   wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh
