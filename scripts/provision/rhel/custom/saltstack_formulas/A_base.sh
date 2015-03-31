@@ -12,8 +12,8 @@ link_it() {
   if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
 }
 
-states_top_path=/vagrant/share/salt-config/${HOSTNAME}/file_roots/states/top.sls
-pillar_root=/vagrant/share/salt-config/${HOSTNAME}/file_roots/pillar/
+states_top_path=/vagrant/share/salt-config/$(hostname -s)/file_roots/states/top.sls
+pillar_root=/vagrant/share/salt-config/$(hostname -s)/file_roots/pillar/
 
 mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,pillar/examples,states}
 mkdir -p /vagrant/share/misc

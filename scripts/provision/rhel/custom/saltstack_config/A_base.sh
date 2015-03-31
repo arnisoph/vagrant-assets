@@ -9,8 +9,8 @@ if [[ -z "$(which salt-call)" ]]; then
   exit 1
 fi
 
-minion_config_path=/vagrant/share/salt-config/${HOSTNAME}/config/minion
-master_config_path=/vagrant/share/salt-config/${HOSTNAME}/config/master
+minion_config_path=/vagrant/share/salt-config/$(hostname -s)/config/minion
+master_config_path=/vagrant/share/salt-config/$(hostname -s)/config/master
 
 
 # SALT-MINION
