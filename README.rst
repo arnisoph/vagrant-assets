@@ -62,3 +62,4 @@ TODO
 ----
 
 * add puppet support
+* prov script: remove incompatible vbox additions and then install compatible version
