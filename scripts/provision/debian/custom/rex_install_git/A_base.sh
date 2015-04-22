@@ -10,7 +10,7 @@ apt-get update
 
 # apt-cache depends rex | grep Depends | sed "s/.*ends:\ //" | tr '\n' ' '
 
-DEBIAN_FRONTEND=noninteractive apt-get -y install \
+DEBIAN_FRONTEND=noninteractive apt-get -yV install \
   cpanminus \
   libdbi-perl \
   libdigest-hmac-perl \

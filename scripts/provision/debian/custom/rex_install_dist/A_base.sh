@@ -8,6 +8,6 @@ echo "deb https://rex.linux-files.org/debian/ $(lsb_release -cs) rex" > /etc/apt
 wget -O - https://rex.linux-files.org/DPKG-GPG-KEY-REXIFY-REPO | apt-key add -
 apt-get update
 
-DEBIAN_FRONTEND=noninteractive apt-get -y install rex
+DEBIAN_FRONTEND=noninteractive apt-get -yV install rex
 
 echo "Finishing ${0}.."
