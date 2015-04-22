@@ -24,6 +24,7 @@ yum -y install \
   sudo \
   unzip \
   wget \
-  which
+  which \
+  bind-utils
 
 echo "Finishing ${0}.."

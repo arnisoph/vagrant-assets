@@ -42,6 +42,7 @@ Vagrant provisioners:
 * Custom: saltstack_install_bootstrap
 * Custom: rex_install_dist
 * Custom: rex_install_git
+* Custom: puppet_install_dist
 
 
 Files & Directories
@@ -61,4 +62,4 @@ None
 TODO
 ----
 
-* add puppet support
+None
