@@ -5,8 +5,11 @@ echo "Starting ${0}.."
 set -x
 
 yum -y update
+
 yum -y install \
   epel-release \
+
+yum -y install \
   perl \
   make \
   gcc \
