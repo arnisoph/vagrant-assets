@@ -6,7 +6,7 @@ set -x
 
 if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
   # Centos 6.5 bug workaround
-  if [[ $(grep ' 6.5' /etc/redhat-release) ]]; then
+  if [[ $(grep -E '^[A-Za-z ]*6\.5' /etc/redhat-release) ]]; then
     cd /usr/src/kernels/*/include/drm
     ln -s /usr/include/drm/drm.h drm.h
     ln -s /usr/include/drm/drm_sarea.h drm_sarea.h

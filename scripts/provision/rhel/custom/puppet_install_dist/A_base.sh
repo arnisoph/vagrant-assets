@@ -11,7 +11,7 @@ set -x
 
 # add EL puppetlabs repository
 majorver=6
-if [[ $(grep -E '^[A-Za-z ]*7.' /etc/redhat-release) ]]; then
+if [[ $(grep -E '^[A-Za-z ]*7\.' /etc/redhat-release) ]]; then
   majorver=7
 fi
 
