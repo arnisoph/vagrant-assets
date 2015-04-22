@@ -5,8 +5,11 @@ echo "Starting ${0}.."
 set -x
 
 yum -y update
+
 yum -y install \
   epel-release \
+
+yum -y install \
   perl \
   make \
   gcc \
@@ -23,6 +26,7 @@ yum -y install \
   which \
   tree \
   vim \
-  bash-completion
+  bash-completion \
+  bind-utils
 
 echo "Finishing ${0}.."

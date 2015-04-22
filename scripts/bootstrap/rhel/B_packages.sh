@@ -5,10 +5,13 @@ echo "Starting ${0}.."
 set -x
 
 yum -y update
+
+yum -y install \
+  epel-release
+
 yum -y install \
   kernel-headers-$(uname -r) \
   kernel-devel-$(uname -r) \
-  epel-release \
   perl \
   make \
   gcc \
@@ -24,6 +27,7 @@ yum -y install \
   sudo \
   unzip \
   wget \
-  which
+  which \
+  bind-utils
 
 echo "Finishing ${0}.."
