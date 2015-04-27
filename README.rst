@@ -39,10 +39,15 @@ Vagrant providers:
 
 Vagrant provisioners:
 
+* Custom: basic
 * Custom: saltstack_install_bootstrap
+* Custom: saltstack_config
+* Custom: saltstack_formulas
+* Custom: saltstack_services
 * Custom: rex_install_dist
 * Custom: rex_install_git
 * Custom: puppet_install_dist
+* Custom: puppet_provision
 
 
 Files & Directories
