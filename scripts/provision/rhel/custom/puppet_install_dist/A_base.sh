@@ -15,8 +15,10 @@ if [[ $(grep -E '^[A-Za-z ]*7\.' /etc/redhat-release) ]]; then
   majorver=7
 fi
 
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-${majorver}.noarch.rpm
+if [[ -z "$(which puppet)" ]]; then
+  rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-${majorver}.noarch.rpm
 
-yum -y --enablerepo=puppetlabs-products install puppet
+  yum -y --enablerepo=puppetlabs-products install puppet
+fi
 
 echo "Finishing ${0}.."

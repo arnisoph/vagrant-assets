@@ -1,6 +1,7 @@
 [Unreleased] ([unreleased])
 ---------------------------
-None
+* add puppet_provision provision script
+* add pre/post script hooks for provision scripts
 
 v1.1.0 (2015-04-22)
 -------------------

@@ -5,8 +5,14 @@ provisioner=$1
 
 echo "Making all shell scripts executable.."
 find /vagrant/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
+[[ -d /vagrant/share/scripts/ ]] && find /vagrant/share/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
 
 echo "Executing shell scripts.."
+
+if [[ -e "/vagrant/share/scripts/${provisioner}-pre.sh" ]]; then
+  /vagrant/share/scripts/${provisioner}-pre.sh || exit 1
+fi
+
 if [[ -d "/vagrant/scripts/custom/${provisioner}" ]]; then
   for f in /vagrant/scripts/custom/${provisioner}/*.sh; do
     ${f} || exit 1
@@ -15,6 +21,10 @@ else
   for f in /vagrant/scripts/${provisioner}/*.sh; do
     ${f} || exit 1
   done
+fi
+
+if [[ -e "/vagrant/share/scripts/${provisioner}-post.sh" ]]; then
+  /vagrant/share/scripts/${provisioner}-post.sh || exit 1
 fi
 
 echo "Finishing ${0}.."
