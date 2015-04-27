@@ -8,6 +8,6 @@ puppet apply \
   --test \
   --modulepath=/vagrant/share/puppet/modules_custom/:/vagrant/share/puppet/modules/:/vagrant/share/puppet/modules_dist/ \
   --hiera_config=/vagrant/share/puppet/hiera.yaml \
-  /vagrant/share/puppet/manifests/default.pp
+  /vagrant/share/puppet/manifests/$(hostname -s)/default.pp
 
 echo "Finishing ${0}.."
