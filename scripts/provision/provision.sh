@@ -5,12 +5,12 @@ provisioner=$1
 
 echo "Making all shell scripts executable.."
 find /vagrant/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
-[[ -d /vagrant/share/misc/scripts/ ]] && find /vagrant/share/misc/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
+[[ -d /vagrant/share/misc/scripts/$(hostname -s)/ ]] && find /vagrant/share/misc/scripts/$(hostname -s)/ -type f -name '*.sh' -exec chmod +x {} \;
 
 echo "Executing shell scripts.."
 
-if [[ -e "/vagrant/share/misc/scripts/${provisioner}-pre.sh" ]]; then
-  /vagrant/share/misc/scripts/${provisioner}-pre.sh || exit 1
+if [[ -e "/vagrant/share/misc/scripts/$(hostname -s)/${provisioner}-pre.sh" ]]; then
+  /vagrant/share/misc/scripts/$(hostname -s)/${provisioner}-pre.sh || exit 1
 fi
 
 if [[ -d "/vagrant/scripts/custom/${provisioner}" ]]; then
@@ -23,8 +23,8 @@ else
   done
 fi
 
-if [[ -e "/vagrant/share/misc/scripts/${provisioner}-post.sh" ]]; then
-  /vagrant/share/misc/scripts/${provisioner}-post.sh || exit 1
+if [[ -e "/vagrant/share/misc/scripts/$(hostname -s)/${provisioner}-post.sh" ]]; then
+  /vagrant/share/misc/scripts/$(hostname -s)/${provisioner}-post.sh || exit 1
 fi
 
 echo "Finishing ${0}.."
