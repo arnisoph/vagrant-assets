@@ -3,6 +3,9 @@
 provisioner=$1
 [[ -z "$provisioner" ]] && provisioner=helloworld
 
+echo "Sourcing scripts that set environment variables for provision scripts.."
+[[ -r "/tmp/vagrant-provision-${provisioner}-env.sh" ]] && source "/tmp/vagrant-provision-${provisioner}-env.sh"
+
 echo "Making all shell scripts executable.."
 find /vagrant/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
 [[ -d /vagrant/share/misc/scripts/$(hostname -s)/ ]] && find /vagrant/share/misc/scripts/$(hostname -s)/ -type f -name '*.sh' -exec chmod +x {} \;

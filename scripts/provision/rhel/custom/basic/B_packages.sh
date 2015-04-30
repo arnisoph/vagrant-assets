@@ -4,7 +4,10 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
-yum -y update
+update_dist=$ENV_basic_update_dist
+[[ -z "$update_dist" ]] && update_dist=false
+
+[[ "$update_dist" == 'true' ]] && yum -y update
 
 yum -y install \
   epel-release \
