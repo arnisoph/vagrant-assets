@@ -1,5 +1,7 @@
 [Unreleased] ([unreleased])
 ---------------------------
+* update on demand only
+* change the location of some salt files, this will break backwards-compat
 
 v1.2.0 (2015-04-30)
 -------------------
