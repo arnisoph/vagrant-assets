@@ -1,6 +1,4 @@
 #!/bin/bash
-#TODO update config with /vagrant/share/fooo (master & minion config) + pillar, etc.
-#TODO move dir creation to this file instead of saltstack_setup
 
 echo '##############################################'
 echo "Starting ${0}.."
@@ -12,14 +10,14 @@ link_it() {
   if [[ -e $src && ! -e $dst ]]; then ln -s $src $dst || exit 1; fi
 }
 
-states_top_path=/vagrant/share/salt/devenv/$(hostname -s)/file_roots/states/top.sls
-pillar_root=/vagrant/share/salt/devenv/$(hostname -s)/file_roots/pillar/
+states_top_path=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/states/top.sls
+pillar_root=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/pillar/
 
 mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,pillar/examples,states}
-mkdir -p /vagrant/share/misc
+mkdir -p /vagrant/shared/misc
 
 [[ -f $states_top_path ]] && ln -sf $states_top_path /srv/salt/states/top.sls
-[[ -d $pillar_root && ! -e /srv/salt/pillar/share ]] && ln -sf $pillar_root /srv/salt/pillar/share
+[[ -d $pillar_root && ! -e /srv/salt/pillar/shared ]] && ln -sf $pillar_root /srv/salt/pillar/shared
 
 if [[ -d /vagrant/salt/formulas/ ]]; then
   for d in /vagrant/salt/formulas/*; do

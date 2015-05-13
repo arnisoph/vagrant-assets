@@ -9,8 +9,8 @@ if [[ -z "$(which salt-call)" ]]; then
   exit 1
 fi
 
-minion_config_path=/vagrant/share/salt/devenv/$(hostname -s)/config/minion
-master_config_path=/vagrant/share/salt/devenv/$(hostname -s)/config/master
+minion_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/minion
+master_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/master
 
 
 # SALT-MINION
@@ -23,12 +23,12 @@ file_roots:
   base:
     - /srv/salt/states
     - /srv/salt/contrib/states
-    - /vagrant/share
+    - /vagrant/shared
 
 pillar_roots:
   base:
     - /srv/salt/pillar/examples
-    - /srv/salt/pillar/share
+    - /srv/salt/pillar/shared
 
 module_dirs:
   - /srv/salt/_modules/common
@@ -57,12 +57,12 @@ file_roots:
   base:
     - /srv/salt/states
     - /srv/salt/contrib/states
-    - /vagrant/share
+    - /vagrant/shared
 
 pillar_roots:
   base:
     - /srv/salt/pillar/examples
-    - /srv/salt/pillar/share
+    - /srv/salt/pillar/shared
 EOF
 fi
 

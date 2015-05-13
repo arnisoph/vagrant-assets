@@ -9,8 +9,8 @@ puppet apply \
   --verbose \
   --show_diff \
   --detailed-exitcodes \
-  --modulepath=/vagrant/share/puppet/modules_custom/:/vagrant/share/puppet/modules/:/vagrant/share/puppet/modules_dist/ \
-  --hiera_config=/vagrant/share/puppet/hiera.yaml \
-  /vagrant/share/puppet/manifests/$(hostname -s)/default.pp
+  --modulepath=/vagrant/shared/puppet/modules_custom/:/vagrant/shared/puppet/modules/:/vagrant/shared/puppet/modules_dist/ \
+  --hiera_config=/vagrant/shared/puppet/hiera.yaml \
+  /vagrant/shared/puppet/manifests/$(hostname -s)/default.pp
 
 echo "Finishing ${0}.."

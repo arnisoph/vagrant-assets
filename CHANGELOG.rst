@@ -2,6 +2,7 @@
 ---------------------------
 * update on demand only
 * change the location of some salt files, this will break backwards-compat
+* rename share/ to shared/
 
 v1.2.0 (2015-04-30)
 -------------------
