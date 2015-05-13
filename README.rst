@@ -21,11 +21,6 @@ Assets for Packer, Vagrant & Co.
 Supported Platforms
 -------------------
 
-Host Operating Systems:
-
-* OS X 10.9
-* OS X 10.10
-
 Guest Operating systems:
 
 * GNU/ Linux Debian 7
