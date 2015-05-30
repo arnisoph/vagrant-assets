@@ -30,7 +30,7 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
     if [[ -d ${d}/contrib/states ]]; then
       link_it ${d}/contrib/states /srv/salt/contrib/states/${d##*/}
     elif [[ -d ${d}/contrib/files ]]; then
-      link_it ${d}/contrib/files /srv/salt/contrib/states/${d##*/}
+      link_it ${d}/contrib /srv/salt/contrib/states/${d##*/}
     fi
 
     link_it ${d}/pillar_examples /srv/salt/pillar/examples/${d##*/}
