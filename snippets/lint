@@ -1,0 +1,2 @@
+PYTHONPATH=~/Documents/dev/github/yapf python ~/Documents/dev/github/yapf/yapf -ir .
+~/Documents/dev/github/project-sync/project_sync saltstack-squid-formula ~/Documents/dev/github/project-sync/templates/arbe_saltstack ~/Documents/dev/github/project-sync/templates/arbe_saltstack/meta_defaults.yaml
