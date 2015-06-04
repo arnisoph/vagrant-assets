@@ -13,6 +13,10 @@ if [[ -r $context_file ]]; then
   IFS=','
   bootstrap_params=( $saltstack_install_bootstrap_params )
   unset IFS
+elif [[ -n "$ENV_saltstack_install_bootstrap_params" ]]; then
+  IFS=','
+  bootstrap_params=( $ENV_saltstack_install_bootstrap_params )
+  unset IFS
 else
   bootstrap_params=( '-M' '-K' 'stable' )
 fi
