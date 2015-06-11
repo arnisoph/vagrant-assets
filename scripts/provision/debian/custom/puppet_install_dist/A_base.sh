@@ -9,7 +9,7 @@ if [[ -z "$(which puppet)" ]]; then
   dpkg -i /tmp/puppetlabs-release.deb
 
   apt-get update
-  DEBIAN_FRONTEND=noninteractive apt-get -yV install puppet
+  DEBIAN_FRONTEND=noninteractive apt-get -yV install puppet ruby-deep-merge
 fi
 
 echo "Finishing ${0}.."
