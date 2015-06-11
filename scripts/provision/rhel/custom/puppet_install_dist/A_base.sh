@@ -19,6 +19,8 @@ if [[ -z "$(which puppet)" ]]; then
   rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-${majorver}.noarch.rpm
 
   yum -y --enablerepo=puppetlabs-products install puppet rubygem-deep_merge
+else
+  yum -y install rubygem-deep_merge
 fi
 
 echo "Finishing ${0}.."

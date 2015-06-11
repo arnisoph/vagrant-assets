@@ -10,6 +10,8 @@ if [[ -z "$(which puppet)" ]]; then
 
   apt-get update
   DEBIAN_FRONTEND=noninteractive apt-get -yV install puppet ruby-deep-merge
+else
+  DEBIAN_FRONTEND=noninteractive apt-get -yV install ruby-deep-merge
 fi
 
 echo "Finishing ${0}.."
