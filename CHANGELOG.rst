@@ -1,5 +1,6 @@
 [Unreleased] ([unreleased])
 ---------------------------
+* provide yum/apt proxy support
 * update on demand only
 * change the location of some salt files, this will break backwards-compat
 * rename share/ to shared/

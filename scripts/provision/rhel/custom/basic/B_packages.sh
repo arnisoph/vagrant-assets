@@ -5,7 +5,11 @@ echo "Starting ${0}.."
 set -x
 
 update_dist=$ENV_basic_update_dist
-[[ -z "$update_dist" ]] && update_dist=false
+pkg_proxy_uri=$ENV_basic_pkg_proxy_uri
+
+if [[ -n "$pkg_proxy_uri" ]]; then
+  echo "proxy=${pkg_proxy_uri}" >> /etc/yum.conf
+fi
 
 [[ "$update_dist" == 'true' ]] && yum -y update
 
