@@ -30,6 +30,7 @@ Guest Operating systems:
 
 Vagrant providers:
 
+* Linode (https://github.com/displague/vagrant-linode)
 * VirtualBox (>= 4.3.22, Oracle VM VirtualBox Extension Pack >= 4.3.22)
 
 Vagrant provisioners:
