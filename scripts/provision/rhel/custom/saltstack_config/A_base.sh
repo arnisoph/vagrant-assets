@@ -11,7 +11,7 @@ fi
 
 minion_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/minion
 master_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/master
-
+salt_master=$ENV_saltstack_config_salt_master
 
 # SALT-MINION
 if [[ -f $minion_config_path ]]; then
@@ -39,6 +39,7 @@ states_dirs:
 
 file_client: local
 EOF
+  [[ -n "$salt_master" ]] && echo "master: ${salt_master}" >> /etc/salt/minion
 fi
 
 echo "$(hostname -f)" > /etc/salt/minion_id

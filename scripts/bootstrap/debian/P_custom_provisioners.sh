@@ -9,7 +9,7 @@ provisioners_context=( ${CUSTOM_PROVISIONERS_CONTEXT} )
 unset IFS
 
 for p in ${provisioners_context[@]}; do
-  echo "export ${p}" >> /tmp/provisioners_context.sh
+  echo "export '${p}'" >> /tmp/provisioners_context.sh
 done
 
 IFS=','
