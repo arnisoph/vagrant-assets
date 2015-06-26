@@ -28,11 +28,6 @@ Guest Operating systems:
 * CentOS 6
 * CentOS 7
 
-Vagrant providers:
-
-* Linode (https://github.com/displague/vagrant-linode)
-* VirtualBox (>= 4.3.22, Oracle VM VirtualBox Extension Pack >= 4.3.22)
-
 Vagrant provisioners:
 
 * Custom: basic
