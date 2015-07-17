@@ -5,6 +5,7 @@
 * change the location of some salt files, this will break backwards-compat
 * rename share/ to shared/
 * add /vagrant/shared/modules_ext as additional puppet mod dir
+* optionally install hiera-eyaml
 
 v1.2.0 (2015-04-30)
 -------------------

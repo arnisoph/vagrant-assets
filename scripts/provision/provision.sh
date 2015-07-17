@@ -12,6 +12,8 @@ find /vagrant/scripts/ -type f -name '*.sh' -exec chmod +x {} \;
 
 echo "Executing shell scripts.."
 
+export PATH=${PATH}:/usr/local/bin/
+
 if [[ -e "/vagrant/shared/misc/scripts/$(hostname -s)/${provisioner}-pre.sh" ]]; then
   /vagrant/shared/misc/scripts/$(hostname -s)/${provisioner}-pre.sh || exit 1
 fi
