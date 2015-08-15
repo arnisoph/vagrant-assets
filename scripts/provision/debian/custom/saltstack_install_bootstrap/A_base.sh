@@ -21,7 +21,7 @@ else
   bootstrap_params=( '-M' '-K' 'stable' )
 fi
 
-DEBIAN_FRONTEND=noninteractive apt-get -yV install python-pygit2 python-git
+DEBIAN_FRONTEND=noninteractive apt-get -yV install python-pygit2 python-git git
 
 if [[ -z "$(which salt-call)" ]]; then
   wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh
