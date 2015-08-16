@@ -21,7 +21,7 @@ else
   bootstrap_params=( '-M' '-K' 'stable' )
 fi
 
-yum -y install python-pygit2 gitpython git
+yum -y install gitpython git
 
 if [[ -z "$(which salt-call)" ]]; then
   wget https://raw.githubusercontent.com/saltstack/salt-bootstrap/stable/bootstrap-salt.sh
