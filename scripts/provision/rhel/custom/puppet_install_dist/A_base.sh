@@ -12,6 +12,9 @@ set -x
 setup_hiera_eyaml=$ENV_puppet_install_dist_setup_hiera_eyaml
 [[ -z "$setup_hiera_eyaml" ]] && setup_hiera_eyaml=false
 
+puppet_packages=$ENV_puppet_install_dist_puppet_packages
+[[ -z "$puppet_packages" ]] && puppet_packages='puppet rubygem-deep_merge'
+
 # add EL puppetlabs repository
 majorver=6
 if [[ $(grep -E '^[A-Za-z ]*7\.' /etc/redhat-release) ]]; then
@@ -20,11 +23,10 @@ fi
 
 if [[ -z "$(which puppet)" ]]; then
   rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-${majorver}.noarch.rpm
-
-  yum -y --enablerepo=puppetlabs-products install puppet rubygem-deep_merge
-else
-  yum -y install rubygem-deep_merge
+  yum makecache
 fi
+
+yum -y install $puppet_packages
 
 if [[ "$setup_hiera_eyaml" == 'true' ]]; then
   gem install --verbose hiera-eyaml

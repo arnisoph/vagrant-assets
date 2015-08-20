@@ -7,6 +7,7 @@
 * add /vagrant/shared/modules_ext as additional puppet mod dir
 * optionally install hiera-eyaml
 * optionally add local tools to PATH
+* optionally specify puppet packages to install (e.g. to pin a version)
 
 v1.2.0 (2015-04-30)
 -------------------

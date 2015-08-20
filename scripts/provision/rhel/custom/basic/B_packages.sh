@@ -11,11 +11,12 @@ yum -y install \
   epel-release \
   ed
 
+[[ -e /etc/yum/pluginconf.d/fastestmirror.conf ]] && ed -s /etc/yum/pluginconf.d/fastestmirror.conf <<< $',s/enabled=1/enabled=0/g\nw' \;
+
 if [[ -n "$pkg_proxy_uri" ]]; then
   echo "proxy=${pkg_proxy_uri}" >> /etc/yum.conf
   find /etc/yum.repos.d/ -type f -name '*.repo' -exec ed -s {} <<< $',s/#baseurl=/baseurl=/g\nw' \;
   find /etc/yum.repos.d/ -type f -name '*.repo' -exec ed -s {} <<< $',s/mirrorlist=/#mirrorlist=/g\nw' \;
-  [[ -e /etc/yum/pluginconf.d/fastestmirror.conf ]] && ed -s /etc/yum/pluginconf.d/fastestmirror.conf <<< $',s/enabled=1/enabled=0/g\nw' \;
 fi
 
 [[ "$update_dist" == 'true' ]] && yum -y update
