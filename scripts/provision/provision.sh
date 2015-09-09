@@ -19,7 +19,7 @@ if [[ -e "/vagrant/shared/misc/scripts/$(hostname -s)/${provisioner}-pre.sh" ]];
 fi
 
 if [[ -d "/vagrant/scripts/custom/${provisioner}" ]]; then
-  for f in /vagrant/scripts/custom/${provisioner}/*.sh; do
+  for f in $(ls -r /vagrant/scripts/custom/${provisioner}/*.sh | sort); do
     ${f} || exit 1
   done
 else
