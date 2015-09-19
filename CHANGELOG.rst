@@ -11,6 +11,7 @@
 * Order scripts by numbers instead of characters (#2)
 * provide provison step saltstack_provision
 * Manage repository sources (#4)
+* env var puppet_packages should be a comma separated list (#1)
 
 v1.2.0 (2015-04-30)
 -------------------
