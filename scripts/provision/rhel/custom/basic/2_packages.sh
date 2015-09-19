@@ -7,6 +7,8 @@ set -x
 update_dist=$ENV_basic_update_dist
 pkg_proxy_uri=$ENV_basic_pkg_proxy_uri
 
+#TODO manage repo files
+
 yum -y install \
   epel-release \
   ed

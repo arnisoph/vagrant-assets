@@ -9,6 +9,9 @@
 * optionally add local tools to PATH
 * optionally specify puppet packages to install (e.g. to pin a version)
 * Order scripts by numbers instead of characters (#2)
+* provide provison step saltstack_provision
+* Manage repository sources (#4)
+* env var puppet_packages should be a comma separated list (#1)
 * saltstack_formulas: look for reactor files too in contrib dir
 
 v1.2.0 (2015-04-30)
