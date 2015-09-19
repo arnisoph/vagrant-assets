@@ -13,7 +13,7 @@ link_it() {
 states_top_path=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/states/top.sls
 pillar_root=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/pillar/
 
-mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,pillar/examples,states}
+mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,contrib/reactor,pillar/examples,states}
 mkdir -p /vagrant/shared/misc
 
 [[ -f $states_top_path ]] && ln -sf $states_top_path /srv/salt/states/top.sls
@@ -31,6 +31,10 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
       link_it ${d}/contrib/states /srv/salt/contrib/states/${d##*/}
     elif [[ -d ${d}/contrib/files ]]; then
       link_it ${d}/contrib /srv/salt/contrib/states/${d##*/}
+    fi
+
+    if [[ -d ${d}/contrib/reactor ]]; then
+      link_it ${d}/contrib/reactor /srv/salt/contrib/reactor/${d##*/}
     fi
 
     link_it ${d}/pillar_examples /srv/salt/pillar/examples/${d##*/}

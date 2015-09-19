@@ -9,6 +9,7 @@
 * optionally add local tools to PATH
 * optionally specify puppet packages to install (e.g. to pin a version)
 * Order scripts by numbers instead of characters (#2)
+* saltstack_formulas: look for reactor files too in contrib dir
 
 v1.2.0 (2015-04-30)
 -------------------
