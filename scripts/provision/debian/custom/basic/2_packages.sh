@@ -19,7 +19,9 @@ Acquire {
 EOF
 fi
 
-if [[ "$manage_sources_list" == true ]]; then #TODO make it more configurable
+#TODO make it more configurable
+#TODO detect OS (use Ubuntu sources for Ubuntu)
+if [[ "$manage_sources_list" == true ]]; then
 cat <<EOF > /etc/apt/sources.list
 deb http://ftp.debian.org/debian wheezy main contrib non-free
 deb-src http://ftp.debian.org/debian wheezy main contrib non-free
