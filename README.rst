@@ -35,6 +35,7 @@ Vagrant provisioners:
 * Custom: saltstack_config
 * Custom: saltstack_formulas
 * Custom: saltstack_services
+* Custom: saltstack_provision
 * Custom: rex_install_dist
 * Custom: rex_install_git
 * Custom: puppet_install_dist
@@ -51,11 +52,5 @@ Files & Directories
 
 Additional resources
 --------------------
-
-None
-
-
-TODO
-----
 
 None
