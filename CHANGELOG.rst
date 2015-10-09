@@ -1,5 +1,8 @@
 [Unreleased] ([unreleased])
 ---------------------------
+
+v1.3.0 (2015-10-09)
+-------------------
 * provide yum/apt proxy support
 * update on demand only
 * change the location of some salt files, this will break backwards-compat
