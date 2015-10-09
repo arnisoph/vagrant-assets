@@ -22,6 +22,6 @@ fi
 
 apt-get -q update
 DEBIAN_FRONTEND=noninteractive apt-get -yV upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -yV install apt-transport-https bind9-host wget
+DEBIAN_FRONTEND=noninteractive apt-get -yV install apt-transport-https bind9-host wget apt-utils curl net-tools lsb-release
 
 echo "Finishing ${0}.."
