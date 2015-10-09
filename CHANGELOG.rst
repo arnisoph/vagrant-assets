@@ -15,6 +15,7 @@ v1.3.0 (2015-10-09)
 * provide provison step saltstack_provision
 * Manage repository sources (#4)
 * env var puppet_packages should be a comma separated list (#1)
+* saltstack_formulas: look for reactor files too in contrib dir
 
 v1.2.0 (2015-04-30)
 -------------------
