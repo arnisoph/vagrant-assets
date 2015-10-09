@@ -4,17 +4,16 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
+if [[ -n "$MANAGE_SOURCES_LIST" ]]; then #TODO make it more configurable
+  true #TODO
+fi
+
 yum -y update
 
 yum -y install \
   epel-release
 
 yum -y install \
-  kernel-headers-$(uname -r) \
-  kernel-devel-$(uname -r) \
-  perl \
-  make \
-  gcc \
   bzip2 \
   curl \
   dhclient \

@@ -4,6 +4,14 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
+if [[ "$PACKER_BUILDER_TYPE" =~ virtualbox-iso|virtualbox-ovf|vmware-iso|vmware-vmx ]]; then
+  yum -y install \
+    kernel-headers-$(uname -r) \
+    kernel-devel-$(uname -r) \
+    make \
+    gcc
+fi
+
 if [[ $PACKER_BUILDER_TYPE =~ virtualbox ]]; then
   # Centos 6.5 bug workaround
   if [[ $(grep -E '^[A-Za-z ]*6\.5' /etc/redhat-release) ]]; then

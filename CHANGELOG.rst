@@ -1,5 +1,7 @@
 [Unreleased] ([unreleased])
 ---------------------------
+* use more packer provision context variables
+* remove some uneeeded package installation
 
 v1.3.0 (2015-10-09)
 -------------------

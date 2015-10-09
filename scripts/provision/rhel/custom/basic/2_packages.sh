@@ -26,7 +26,6 @@ fi
 yum -y install \
   perl \
   make \
-  gcc \
   bzip2 \
   curl \
   dhclient \
