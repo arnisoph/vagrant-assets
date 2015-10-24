@@ -19,9 +19,11 @@ apt-get clean
 rm -rf /usr/share/doc
 find /var/cache -type f -delete -print
 
-# Zeroing device to make space...
-dd if=/dev/zero of=/EMPTY bs=1M
-rm -f /EMPTY
+if [[ "$PACKER_BUILDER_TYPE" =~ virtualbox-iso|virtualbox-ovf|vmware-iso|vmware-vmx ]]; then #TODO is this useful for docker images, too?
+  # Zeroing device to make space...
+  dd if=/dev/zero of=/EMPTY bs=1M
+  rm -f /EMPTY
+fi
 
 # Remove history file
 unset HISTFILE

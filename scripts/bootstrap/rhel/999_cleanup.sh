@@ -16,8 +16,10 @@ find /etc/sysconfig/network-scripts/ -name 'ifcfg-enp*' -exec sed -i '/^HWADDR/d
 yum -y clean all
 
 # Zeroing device to make space...
-dd if=/dev/zero of=/EMPTY bs=1M
-rm -f /EMPTY
+if [[ "$PACKER_BUILDER_TYPE" =~ virtualbox-iso|virtualbox-ovf|vmware-iso|vmware-vmx ]]; then #TODO is this useful for docker images, too?
+  dd if=/dev/zero of=/EMPTY bs=1M
+  rm -f /EMPTY
+fi
 
 # Remove history file
 unset HISTFILE

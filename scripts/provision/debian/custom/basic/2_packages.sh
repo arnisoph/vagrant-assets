@@ -40,6 +40,6 @@ fi
 apt-get -q update
 
 [[ "$update_dist" == 'true' ]] && DEBIAN_FRONTEND=noninteractive apt-get -yV upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -yV install tree vim bash-completion apt-transport-https bind9-host
+DEBIAN_FRONTEND=noninteractive apt-get -yV install tree vim bash-completion apt-transport-https bind9-host wget
 
 echo "Finishing ${0}.."
