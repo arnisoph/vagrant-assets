@@ -13,7 +13,8 @@ link_it() {
 states_top_path=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/states/top.sls
 pillar_root=/vagrant/shared/salt/devenv/$(hostname -s)/file_roots/pillar/
 
-mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,contrib/reactor,pillar/examples,states}
+#mkdir -p /srv/salt/{_grains,_modules/formulas,_states,contrib/states,contrib/reactor,pillar/examples,states}
+mkdir -p /srv/salt/{_grains,_modules,_states,contrib/states,contrib/reactor,pillar/examples,states}
 mkdir -p /vagrant/shared/misc
 
 [[ -f $states_top_path ]] && ln -sf $states_top_path /srv/salt/states/top.sls
@@ -39,15 +40,14 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
 
     link_it ${d}/pillar_examples /srv/salt/pillar/examples/${d##*/}
 
-    src=${d}/_modules
-    dst=/srv/salt/_modules/formulas/${f##*/}
-    if [[ -d $src ]]; then
-      find $d -type f -name '*.py' -exec ln -sf {} $dst \; || exit 1
-    fi
+    [[ -d ${d}/_modules ]] && find ${d}/_modules -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \;
+    [[ -d ${d}/_stages ]] && find ${d}/_stages -type f -name '*.py' -exec ln -sf {} /srv/salt/_stages/ \;
   done
 fi
 
-[[ -d /vagrant/salt/_modules/ ]] && link_it /vagrant/salt/_modules/ /srv/salt/_modules/common
-[[ -d /vagrant/salt/_states/ ]] && link_it /vagrant/salt/_states/ /srv/salt/_states/common
+find /vagrant/salt/_modules/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \; || exit 1
+find /vagrant/salt/_states/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \; || exit 1
+#[[ -d /vagrant/salt/_modules/ ]] && link_it /vagrant/salt/_modules/ /srv/salt/_modules/common
+#[[ -d /vagrant/salt/_states/ ]] && link_it /vagrant/salt/_states/ /srv/salt/_states/common
 
 echo "Finishing ${0}.."
