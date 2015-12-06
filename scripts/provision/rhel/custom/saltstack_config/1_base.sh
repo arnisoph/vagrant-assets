@@ -31,11 +31,10 @@ pillar_roots:
     - /srv/salt/pillar/shared
 
 module_dirs:
-  - /srv/salt/_modules/common
-  - /srv/salt/_modules/formulas
+  - /srv/salt/_modules
 
 states_dirs:
-  - /srv/salt/_states/common
+  - /srv/salt/_states
 
 file_client: local
 EOF
