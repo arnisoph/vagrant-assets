@@ -4,6 +4,7 @@
 * remove some uneeeded package installation
 * add context var to temporarily disable ipv6 stack
 * set new default mod dirs for salt
+* update salt master and minion config (add more search paths for states and pillar)
 
 v1.3.0 (2015-10-09)
 -------------------

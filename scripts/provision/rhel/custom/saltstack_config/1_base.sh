@@ -21,6 +21,7 @@ else
   cat << EOF > /etc/salt/minion
 file_roots:
   base:
+    - /srv/salt
     - /srv/salt/states
     - /srv/salt/contrib/states
     - /vagrant/shared
@@ -29,6 +30,7 @@ pillar_roots:
   base:
     - /srv/salt/pillar/examples
     - /srv/salt/pillar/shared
+    - /srv/salt/pillar
 
 module_dirs:
   - /srv/salt/_modules
@@ -55,6 +57,7 @@ autosign_file: /etc/salt/autosign.conf
 
 file_roots:
   base:
+    - /srv/salt
     - /srv/salt/states
     - /srv/salt/contrib/states
     - /vagrant/shared
@@ -63,6 +66,7 @@ pillar_roots:
   base:
     - /srv/salt/pillar/examples
     - /srv/salt/pillar/shared
+    - /srv/salt/pillar
 EOF
 fi
 
