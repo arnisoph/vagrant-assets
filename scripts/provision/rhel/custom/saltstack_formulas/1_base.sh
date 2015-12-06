@@ -45,8 +45,8 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
   done
 fi
 
-[[ -d /vagrant/salt/_modules/ ]] && find /vagrant/salt/_modules/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \; || exit 1
-[[ -d /vagrant/salt/_states/ ]] && find /vagrant/salt/_states/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \; || exit 1
+[[ -d /vagrant/salt/_modules/ ]] && find /vagrant/salt/_modules/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \;
+[[ -d /vagrant/salt/_states/ ]] && find /vagrant/salt/_states/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \;
 #[[ -d /vagrant/salt/_modules/ ]] && link_it /vagrant/salt/_modules/ /srv/salt/_modules/common
 #[[ -d /vagrant/salt/_states/ ]] && link_it /vagrant/salt/_states/ /srv/salt/_states/common
 
