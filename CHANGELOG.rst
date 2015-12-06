@@ -3,6 +3,7 @@
 * use more packer provision context variables
 * remove some uneeeded package installation
 * add context var to temporarily disable ipv6 stack
+* set new default mod dirs for salt
 
 v1.3.0 (2015-10-09)
 -------------------
