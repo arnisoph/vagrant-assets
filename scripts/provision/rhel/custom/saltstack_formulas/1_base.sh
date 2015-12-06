@@ -41,12 +41,12 @@ if [[ -d /vagrant/salt/formulas/ ]]; then
     link_it ${d}/pillar_examples /srv/salt/pillar/examples/${d##*/}
 
     [[ -d ${d}/_modules ]] && find ${d}/_modules -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \;
-    [[ -d ${d}/_stages ]] && find ${d}/_stages -type f -name '*.py' -exec ln -sf {} /srv/salt/_stages/ \;
+    [[ -d ${d}/_states ]] && find ${d}/_states -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \;
   done
 fi
 
-find /vagrant/salt/_modules/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \; || exit 1
-find /vagrant/salt/_states/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \; || exit 1
+[[ -d /vagrant/salt/_modules/ ]] && find /vagrant/salt/_modules/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_modules/ \; || exit 1
+[[ -d /vagrant/salt/_states/ ]] && find /vagrant/salt/_states/ -type f -name '*.py' -exec ln -sf {} /srv/salt/_states/ \; || exit 1
 #[[ -d /vagrant/salt/_modules/ ]] && link_it /vagrant/salt/_modules/ /srv/salt/_modules/common
 #[[ -d /vagrant/salt/_states/ ]] && link_it /vagrant/salt/_states/ /srv/salt/_states/common
 
