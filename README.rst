@@ -2,15 +2,6 @@
 vagrant-assets
 ==============
 
-.. image:: http://img.shields.io/github/tag/bechtoldt/vagrant-assets.svg
-    :target: https://github.com/bechtoldt/vagrant-assets/tags
-
-.. image:: http://issuestats.com/github/bechtoldt/vagrant-assets/badge/issue
-    :target: http://issuestats.com/github/bechtoldt/vagrant-assets
-
-.. image:: https://api.flattr.com/button/flattr-badge-large.png
-    :target: https://flattr.com/submit/auto?user_id=bechtoldt&url=https%3A%2F%2Fgithub.com%2Fbechtoldt%2Fvagrant-assets
-
 Assets for Packer, Vagrant & Co.
 
 .. contents::
