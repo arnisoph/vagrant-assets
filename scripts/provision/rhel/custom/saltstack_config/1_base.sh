@@ -11,7 +11,6 @@ fi
 
 minion_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/minion
 master_config_path=/vagrant/shared/salt/devenv/$(hostname -s)/config/master
-salt_master=$ENV_saltstack_config_salt_master
 
 # SALT-MINION
 if [[ -f $minion_config_path ]]; then

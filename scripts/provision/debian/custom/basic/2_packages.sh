@@ -4,10 +4,6 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
-update_dist=$ENV_basic_update_dist
-pkg_proxy_uri=$ENV_basic_pkg_proxy_uri
-manage_sources_list=$ENV_basic_manage_sources_list
-
 if [[ -n "$pkg_proxy_uri" ]]; then
 cat <<EOF > /etc/apt/apt.conf.d/999_vagrant_proxy
 Acquire {

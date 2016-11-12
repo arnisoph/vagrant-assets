@@ -4,11 +4,10 @@ echo '##############################################'
 echo "Starting ${0}.."
 set -x
 
-setup_hiera_eyaml=$ENV_puppet_install_dist_setup_hiera_eyaml
 [[ -z "$setup_hiera_eyaml" ]] && setup_hiera_eyaml=false
 
 IFS=','
-puppet_packages=( $ENV_puppet_install_dist_puppet_packages )
+puppet_packages=( $puppet_packages )
 unset IFS
 [[ -z "$puppet_packages" ]] && puppet_packages=(puppet ruby-deep-merge)
 
